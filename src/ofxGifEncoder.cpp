@@ -52,8 +52,8 @@ void ofxGifEncoder::addFrame(ofImage & img, float _duration) {
         ofLog(OF_LOG_WARNING, "ofxGifEncoder::addFrame image dimensions don't match, skipping frame");
         return;
     }
-    
-    addFrame(img.getPixels(), w, h, img.getPixels().getBitsPerPixel(),  _duration);
+    addFrame(img.getPixels().getData(), w, h, img.getPixels().getBitsPerPixel(), _duration);
+  //  addFrame(img.getPixels(), w, h, img.getPixels().getBitsPerPixel(),  _duration);
 }
 
 void ofxGifEncoder::addFrame(unsigned char *px, int _w, int _h, int _bitsPerPixel, float _duration) {
